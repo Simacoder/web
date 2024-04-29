@@ -1,43 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <title>Base Apparel website</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-    <section>
-        <div class="landing">
-            <div class="logo">
-                <a href="#"> <img src="images/logo.svg" alt="logo" /></a>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <title> Base Apparel coming soon page</title>
+  </head>
+  <body>
+    <div class="logo">
+      <img src="./images/logo.svg" alt="" />
+    </div>
+    <main>
+      <article>
+        <div class="logo">
+          <img src="./images/logo.svg" alt="" />
+        </div>
+        <h1><span>We're</span> <br>coming <br> soon</h1>
 
-            </div>
-            
-                <div class="card">
-                    <h1><span>WE'RE</span><br> COMING<br> SOON</h1>
-                    <p>Hello fellow shoppers! we're currently building our new <br> fashion store. Add your email below
-                    to stay up-to-date with <br>announcements and our launch deals.</p>
-                    <div class="email">
-                    <span id="error-icon" src="images/icon-error.svg"></span>
-                    <input type="email" id="email-field" placeholder="Email address" required>
-                    <label  id="email-error" ></label>
-                    <button onclick="validateEmail()" id="myButton"><img src="images/icon-arrow.svg"></button>
-                    </div>
+        <p>
+          Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date with announcements and our
+          launch deals.
+        </p>
 
-                    <img src="images/hero-desktop.jpg" alt="Image" />
-                </div>
-                
-                
-           
+        <form autocomplete="off">
+          <div>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email Address"
+              required
+            />
+            <label for="email">
+              <img src="./images/icon-error.svg" alt="" />
+            </label>
+            <button type="submit" class="submit">
+              <img src="./images/icon-arrow.svg" alt="" />
+            </button>
+          </div>
+          <small class="error">Please provide a valid email</small>
+        </form>
+      </article>
 
-               
-        </div>      
-    </section>
-    
+      <article>
+        <picture>
+          <source
+            media="(min-width: 768px)"
+            srcset="./images/hero-desktop.jpg"
+          />
+          <img src="./images/hero-mobile.jpg" alt="" />
+        </picture>
+      </article>
+    </main>
+
 
     <script src="scripts.js"></script>
-</body>
+  </body>
 </html>

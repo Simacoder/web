@@ -1,46 +1,26 @@
-const email = document.getElementById('email');
+const submit = document.querySelector(".submit")
+const error = document.querySelector(".error")
+const form = document.querySelector("form")
+const input = document.querySelector("input")
+const label = document.querySelector("label")
 
-form.addEventListener('submit', e => {
-    e.preventDefault();
+form.addEventListener("submit", validate)
+submit.addEventListener("click", validate)
 
-    validateInputs();
-});
+function validate(e) {
+  e.preventDefault()
 
-const setError = (element, message) => {
-    const inputControl = element.parentElement;
-    const errorDisplay = inputControl.querySelector('.error');
+  const inputValue = input.value.trim()
 
-    errorDisplay.innerText = message;
-    inputControl.classList.add('error');
-    inputControl.classList.remove('success')
+  if (!isEmail(inputValue)) {
+    error.style.display = "block"
+    label.style.display = "block"
+  } else {
+    error.style.display = "none"
+    label.style.display = "none"
+  }
 }
 
-const setSuccess = element => {
-    const inputControl = element.parentElement;
-    const errorDisplay = inputControl.querySelector('.error');
-
-    errorDisplay.innerText = '';
-    inputControl.classList.add('success');
-    inputControl.classList.remove('error');
-};
-
-const isValidEmail = email => {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
+function isEmail(input) {
+  return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input)
 }
-
-const validateInputs = () => {
-
-    const emailValue = email.value.trim();
-    if(emailValue === '') {
-        setError(email, 'Email is required');
-    } else if (!isValidEmail(emailValue)) {
-        setError(email, 'Please provide a valid email ');
-    } else {
-        setSuccess(email);
-    }
-
-    
-
-};
-

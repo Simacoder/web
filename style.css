@@ -1,103 +1,181 @@
-//import fonts 
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+/* Desaturated Red: hsl(0, 36%, 70%)
+- Soft Red: hsl(0, 93%, 68%)
 
+### Neutral
 
-body {
+- Dark Grayish Red: hsl(0, 6%, 24%)
 
-    margin: 0;
-    font-family: "Josefin Sans", sans-serif; 
+### Gradients
 
-}
+- Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
+- Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%)
+ */
 
-section {
-    width: 100%;
-    height: 100vh;
-    background-size:cover ;
+ @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
 
-}
-
-.logo {
-    margin-top: 3%;
-    margin-left: 10%;
-}
-
-.card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-  }
-  .card p {
-    padding: 15px;
-    max-width: 70%;
-    margin-top: 13%;
-    margin-left: -45%;
-    color:hsl(0, 36%, 70%);
-    
-  }
-
-  .card img {
-    width: 40%;
-    height: auto;
-    margin-right: 8%;
-    margin-top: -5%;
-  }
-
-  span {
-    color:hsl(0, 36%, 70%);
-    font-weight: 300;
-    
-  }
-  h1 {
-    font-size: 50px;
-    margin-top: -20%;
-    margin-left: 10%;
-    font-family: "Josefin Sans", sans-serif;
-  }
-
-  .email {
-    margin-left: -55%;
-    margin-top: 22%;
-    border-radius: 50px;
-    height: 3%;
-  }
-button {
-    margin-left: -12%;
-    margin-top: 20%;
-
-    border-radius: 50px;
-    height: 3;
-    background: hsl(0, 36%, 70%);
-    cursor: pointer;
-}
-
-#email-field {
-   
-  
-    border: none;
-    border-bottom: 0px solid #555;
-    background: transparent;
-  }
-
-
-#email-error{
-    border-color: hsl(0, 36%, 70%);
-    border: hsl(0, 36%, 70%);
-    font-size: 16px;
-    font-weight: 400;
-    color: red;
-    
-}
-
-#myButton {
-    transition: top 0.5s;
-
-}
-
-.input-control {
-display: block;
-    
-}
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+ 
+ img {
+   max-width: 100%;
+ }
+ 
+ body {
+   font-family: "Josefin Sans", sans-serif;
+   font-size: 16px;
+ }
+ 
+ .logo {
+   padding: 1.5rem 0 0 1.5rem;
+ }
+ 
+ main {
+   display: flex;
+   flex-direction: column-reverse;
+ }
+ 
+ main h1 {
+   text-transform: uppercase;
+   margin-bottom: 1rem;
+   font-size: 2rem;
+   color: hsl(0, 6%, 24%);
+ }
+ 
+ main h1 span {
+   color: hsl(0, 36%, 70%);
+   font-weight: 300;
+ }
+ 
+ main article:first-child {
+   text-align: center;
+   padding: 0 1.5rem 2rem;
+ }
+ 
+ main article:first-child p {
+   color: hsl(0, 36%, 70%);
+   line-height: 1.6;
+ }
+ 
+ main article .logo {
+   display: none;
+ }
+ 
+ main article picture img {
+   width: 100%;
+   margin: 2rem 0;
+ }
+ 
+ form {
+   position: relative;
+ }
+ 
+ form input {
+   font-family: inherit;
+   font-size: 1rem;
+   padding: 0.8rem 1rem;
+   border: 1px solid hsl(0, 6%, 24%);
+   border-radius: 30px;
+   width: 100%;
+   margin: 2rem 0 0;
+   color: hsl(0, 6%, 24%);
+ }
+ 
+ form input::placeholder {
+   color: hsl(0, 6%, 24%);
+ }
+ 
+ /* Beginning of code that breaks */
+ form label {
+   position: absolute;
+   top: 35%;
+   transform: translateY(35%);
+   right: 5.5rem;
+   display: none;
+ }
+ 
+ form button {
+   position: absolute;
+   top: 65%;
+   right: -0.5rem;
+   transform: translateY(-65%);
+ 
+   background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+   border: none;
+   border-radius: 30px;
+   padding: 0.8rem 2rem;
+   cursor: pointer;
+   transition: 0.3s;
+ }
+ 
+ form button:hover {
+   background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 80%, 86%));
+ }
+ /* End of code that breaks */
+ 
+ .error {
+   color: hsl(0, 93%, 68%) !important;
+   text-align: left;
+   margin-top: 0.5rem;
+   display: none;
+ }
+ 
+ .attribution {
+   font-size: 14px;
+   text-align: center;
+ }
+ 
+ .attribution a {
+   color: hsl(228, 45%, 44%);
+ }
+ 
+ @media (min-width: 768px) {
+   body {
+     background: url("./images/bg-pattern-desktop.svg") no-repeat center/cover;
+   }
+ 
+   main {
+     flex-direction: row;
+     align-items: center;
+     justify-content: center;
+   }
+ 
+   main article {
+     flex: 1;
+   }
+ 
+   main article picture img {
+     margin-top: -4rem;
+   }
+ 
+   main article:first-child {
+     text-align: left;
+   }
+ 
+   .logo {
+     display: block;
+   }
+ 
+   main h1 {
+     font-size: 4rem;
+     width: 500px;
+   }
+ 
+   main article:first-child p {
+     width: 500px;
+   }
+ 
+   form input {
+     width: 500px;
+   }
+ 
+   form label {
+     right: 340px;
+   }
+ 
+   form button {
+     right: 250px;
+   }
+ }
