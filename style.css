@@ -22,6 +22,10 @@
  img {
    max-width: 100%;
  }
+
+ img .icon-error {
+  margin-right: -120px;
+ }
  
  body {
    font-family: "Josefin Sans", sans-serif;
@@ -106,6 +110,7 @@
    border: none;
    border-radius: 30px;
    padding: 0.8rem 2rem;
+   margin-right: -122px;
    cursor: pointer;
    transition: 0.3s;
  }
