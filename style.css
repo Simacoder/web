@@ -84,8 +84,20 @@ button {
 
 
 #email-error{
-    
+    border-color: hsl(0, 36%, 70%);
+    border: hsl(0, 36%, 70%);
     font-size: 16px;
     font-weight: 400;
     color: red;
+    
+}
+
+#myButton {
+    transition: top 0.5s;
+
+}
+
+.input-control {
+display: block;
+    
 }
